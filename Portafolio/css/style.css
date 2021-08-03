@@ -1,0 +1,36 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+body{
+    background: #101010 !important;
+}
+.tm{
+    width: 400px !important;
+    height: 400px !important;
+}
+#nombre{
+    color: #e6e213a6;
+    font-size: 5rem;
+    font-weight: 700;
+}
+.bg-black{
+    background: black;
+}
+
+#main-header .item{
+    width: 15rem;
+}
+
+#trabajos .cartitas{
+    width: 5px !important;
+    height: 5px !important;
+}
+
+@media(max-width:500px){
+    #main-header .bebesita{
+        flex-direction: column !important;
+    }
+    #main-header .bebesita .iconos{
+        font-size: 50px !important;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid black;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        background: lightcyan;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+</style>
+<body>
+    
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    let ciclo = setInterval(game,10);
+
+    let grav = 0.06;
+    let vx = 8, vy = 0;
+    let x = 100, y = 200;
+
+    function game(){
+
+        canvas.width = canvas.width;
+
+        ctx.beginPath();
+        ctx.save();
+        ctx.fillStyle = "#000000s";  //color por dentro
+        ctx.strokeStyle = "#FF0000";    // color prueba
+        ctx.arc(x,y,30,0,2*Math.PI);
+        ctx.stroke();
+
+        console.log("velY: "+vy);
+
+        vy += grav;
+
+        x += vx;
+        y += vy;
+
+        if(y>=570){
+            y -= vy;
+            vy = (vy/1.5)*-1;
+            vx = vx/1.001;
+        }
+
+        if(x<30 || x>=570){
+            x -= vx;
+            vx = (vx/1.5)*-1;
+        }
+    }
+    </script>
+</body>
+</html>
